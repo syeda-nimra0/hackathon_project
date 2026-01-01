@@ -1,0 +1,241 @@
+.bio-container {
+  min-height: 100vh;
+  display: flex;
+  gap: 40px;
+  padding: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  animation: fadeIn 0.8s ease;
+}
+
+.bio-form {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--black);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  animation: slideLeft 0.9s ease;
+}
+
+.bio-form h2 {
+  margin-bottom: 30px;
+  color: var(--purple);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.bio-form input,
+.bio-form textarea {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 2px solid #e8e8e8;
+  outline: none;
+  background: #f9f9f9;
+  color: var(--black);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.bio-form input::placeholder,
+.bio-form textarea::placeholder {
+  color: #aaa;
+}
+
+.bio-form input:focus,
+.bio-form textarea:focus {
+  border-color: var(--purple);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(156, 111, 228, 0.1);
+}
+
+.bio-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.bio-form button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(156, 111, 228, 0.3);
+}
+
+.bio-form button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(156, 111, 228, 0.4);
+}
+
+.bio-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.preview-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: slideRight 0.9s ease;
+}
+
+.preview-card h3 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.preview-card .card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--black);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.preview-card .card p {
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.preview-card .card p:last-child {
+  border-bottom: none;
+}
+
+.preview-card .card strong {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes slideLeft {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .bio-container {
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .bio-form h2 {
+    font-size: 24px;
+  }
+
+  .preview-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .bio-form,
+  .preview-card {
+    flex: none;
+    width: 100%;
+  }
+
+  .bio-form {
+    padding: 30px;
+  }
+
+  .bio-form h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .preview-card .card {
+    max-width: 100%;
+  }
+
+  .preview-card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bio-container {
+    padding: 20px 15px;
+  }
+
+  .bio-form {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .bio-form h2 {
+    font-size: 20px;
+  }
+
+  .bio-form input,
+  .bio-form textarea {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .bio-form button {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .preview-card .card {
+    padding: 25px 20px;
+  }
+
+  .preview-card .card p {
+    font-size: 14px;
+  }
+}
